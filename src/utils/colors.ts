@@ -13,5 +13,6 @@ const AppColors = {
   modalBackground: '#rgba(0, 0, 0, 0.5)',
   text: '#000',
   placeholder: '#8e8e8e',
+  disable: '#808080',
 };
 export default AppColors;

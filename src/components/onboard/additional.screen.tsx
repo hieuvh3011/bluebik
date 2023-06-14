@@ -7,7 +7,7 @@ import AppTextInput from '../common/text_input.component';
 import {isEmail, isPhoneNumber} from '@app/utils/validation';
 import AppButton from '../common/button.component';
 import AppColors from '@app/utils/colors';
-import {setBasicInfo} from '@app/redux/onboard/onboard.slice';
+import {setAdditionalInfo} from '@app/redux/onboard/onboard.slice';
 import {Users} from '@app/entities/users';
 import {useDispatch} from 'react-redux';
 import {useAppNavigation} from '@app/route/type.navigator';
@@ -27,6 +27,12 @@ export default function AdditionalScreen() {
   const dispatch = useDispatch();
   const navigation = useAppNavigation();
   const onboardSelector = useAppSelector(state => state.onboard);
+  const isValidToMove =
+    email !== '' &&
+    phone !== '' &&
+    birthday !== '' &&
+    isEmail(email) &&
+    isPhoneNumber(phone);
 
   const onChangeEmail = (value: string) => {
     setEmail(value);
@@ -50,6 +56,7 @@ export default function AdditionalScreen() {
     setDateDialogVisible(false);
     setDate(value);
     setBirthday(value.toISOString().split('T')[0]);
+    setBirthdayError('');
   };
 
   const onPressChangeDate = () => {
@@ -62,7 +69,7 @@ export default function AdditionalScreen() {
       phoneNumber: phone,
       birthday,
     };
-    dispatch(setBasicInfo({user}));
+    dispatch(setAdditionalInfo({user}));
   };
 
   const validateInfo = () => {
@@ -79,19 +86,19 @@ export default function AdditionalScreen() {
 
   const onPressSelectPurpose = () => {
     validateInfo();
-    if (
-      email !== '' &&
-      phone !== '' &&
-      birthday !== '' &&
-      isEmail(email) &&
-      isPhoneNumber(phone)
-    ) {
+    if (isValidToMove) {
       saveInfo();
       navigation.navigate('Purpose');
     }
   };
 
-  const onPressSubmitInfo = () => {};
+  const onPressSubmitInfo = () => {
+    validateInfo();
+    if (isValidToMove) {
+      saveInfo();
+      navigation.navigate('Success');
+    }
+  };
 
   const renderButton = () => {
     if (onboardSelector.user.purpose?.length === 0) {

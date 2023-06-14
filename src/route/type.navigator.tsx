@@ -7,6 +7,7 @@ export type RootStackParamList = {
   Basic: undefined;
   Additional: undefined;
   Purpose: undefined;
+  Success: undefined;
 };
 
 export type MessageNavigationProps<T extends keyof RootStackParamList> = {

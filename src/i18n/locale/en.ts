@@ -13,6 +13,13 @@ export default {
   intro: {
     intro_about_app: 'A simple introduction about this application',
     go_to_onboarding: 'Go to onboarding',
+    retake_the_information: 'Erase and retake the information',
+    name: 'Full name',
+    id: 'ID number',
+    phone: 'Phone number',
+    email: 'Email',
+    birthday: 'Birthday',
+    your_information: 'This is your information',
   },
   basic: {
     basic_information: 'Basic Information',
@@ -41,5 +48,22 @@ export default {
     select_purpose: 'Select purpose',
     email_invalid: 'Email is invalid',
     phone_invalid: 'Phone number is invalid',
+  },
+  purpose: {
+    select_purpose: 'Select purpose',
+    choose_one_or_more:
+      'Select one or more option below. Please let us know the reason that you want to choose this e-wallet',
+    fill_additional_information: 'Fill additional information',
+    transfer: 'transfer money',
+    loan: 'loan a debt',
+    investment: 'invest into something',
+    bill_payment: 'bills payment',
+    saving: 'saving money',
+    other: 'some other reasons',
+  },
+  success: {
+    info_save_successfully:
+      'Your personal information save successfully, please go back to home page',
+    back_to_home: 'Go back now',
   },
 };

@@ -32,10 +32,13 @@ export const onboardSlice = createSlice({
     setPurpose: (state, action: PayloadAction<OnboardState>) => {
       state.user.purpose = action.payload.user.purpose;
     },
+    resetInformation: state => {
+      state.user = initialState.user;
+    },
   },
 });
 
-export const {setBasicInfo, setAdditionalInfo, setPurpose} =
+export const {setBasicInfo, setAdditionalInfo, setPurpose, resetInformation} =
   onboardSlice.actions;
 export const selectSystem = (state: OnboardState) => state;
 
