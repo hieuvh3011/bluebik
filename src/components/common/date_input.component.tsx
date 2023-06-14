@@ -1,4 +1,4 @@
-import {View, Text, ViewStyle, TextInput} from 'react-native';
+import {View, Text, ViewStyle, Pressable} from 'react-native';
 import React from 'react';
 import {ScaledSheet} from 'react-native-size-matters';
 import AppColors from '@app/utils/colors';
@@ -7,32 +7,36 @@ interface Props {
   label: string;
   placeholder: string;
   value: string;
-  onChangeText: (value: string) => void;
+  onPressChangeDate: () => void;
   style?: ViewStyle;
   errorText?: string;
   [key: string]: any;
 }
-const AppTextInput: React.FC<Props> = ({
+const AppDateInput: React.FC<Props> = ({
   label,
   placeholder,
-  value,
-  onChangeText,
+  value = '',
+  onPressChangeDate,
   style,
   errorText = '',
-  ...rest
 }: Props) => {
   const isError = errorText !== '';
+
+  const renderText = () => {
+    if (value === '') {
+      return <Text style={styles.placeholder}>{placeholder}</Text>;
+    }
+    return <Text style={styles.textInside}>{value}</Text>;
+  };
+
   return (
     <View style={[styles.container, style]}>
       <Text style={styles.label}>{label}</Text>
-      <TextInput
-        value={value}
-        onChangeText={onChangeText}
-        placeholder={placeholder}
-        {...rest}
-        style={isError ? styles.inputError : styles.input}
-        placeholderTextColor={AppColors.placeholder}
-      />
+      <Pressable
+        style={[isError ? styles.inputError : styles.input]}
+        onPress={onPressChangeDate}>
+        {renderText()}
+      </Pressable>
       {isError && <Text style={styles.errorText}>{errorText}</Text>}
     </View>
   );
@@ -59,8 +63,7 @@ const styles = ScaledSheet.create({
     minHeight: '40@vs',
     paddingVertical: '4@vs',
     paddingHorizontal: '5@ms',
-    color: AppColors.text,
-    fontSize: '13@ms',
+    justifyContent: 'center',
   },
   inputError: {
     borderWidth: '1@ms',
@@ -69,9 +72,16 @@ const styles = ScaledSheet.create({
     paddingVertical: '4@vs',
     paddingHorizontal: '5@ms',
     borderColor: AppColors.error,
-    color: AppColors.text,
+    justifyContent: 'center',
+  },
+  textInside: {
     fontSize: '13@ms',
+    color: AppColors.text,
+  },
+  placeholder: {
+    fontSize: '13@ms',
+    color: AppColors.placeholder,
   },
 });
 
-export default AppTextInput;
+export default AppDateInput;

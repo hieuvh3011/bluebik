@@ -4748,6 +4748,13 @@ react-native-codegen@^0.71.5:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-date-picker@^4.2.13:
+  version "4.2.13"
+  resolved "https://registry.npmjs.org/react-native-date-picker/-/react-native-date-picker-4.2.13.tgz"
+  integrity sha512-cQ3k+ExXggAnytomeNGNrtV/l2a7WzVUeWKo7Gs2pv/z3TCjjlmKn0ZBMPgcThrFAgFMxgYI0XzKVKT7TPsOmw==
+  dependencies:
+    prop-types "^15.8.1"
+
 react-native-device-info@^10.6.0:
   version "10.6.0"
   resolved "https://registry.npmjs.org/react-native-device-info/-/react-native-device-info-10.6.0.tgz"
@@ -4814,7 +4821,7 @@ react-native-vector-icons@^9.2.0:
     prop-types "^15.7.2"
     yargs "^16.1.1"
 
-react-native@*, "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0", react-native@>=0.42.0, react-native@>=0.59, react-native@>=0.65.0, react-native@>=0.71.0, react-native@>0.64, react-native@0.71.8:
+react-native@*, "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0", "react-native@>= 0.64.3", react-native@>=0.42.0, react-native@>=0.59, react-native@>=0.65.0, react-native@>=0.71.0, react-native@>0.64, react-native@0.71.8:
   version "0.71.8"
   dependencies:
     "@jest/create-cache-key-function" "^29.2.1"
@@ -4880,7 +4887,7 @@ react-test-renderer@18.2.0:
     react-shallow-renderer "^16.15.0"
     scheduler "^0.23.0"
 
-react@*, "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0 || ^17.0.0 || ^16.0.0 || ^15.6.0", react@^18.2.0, react@>=16.8, react@>=17.0.0, react@>15.6.0, "react@15.x || 16.x || 17.x || 18.x", react@18.2.0:
+react@*, "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17.0 || ^18.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18", "react@^18.0.0 || ^17.0.0 || ^16.0.0 || ^15.6.0", react@^18.2.0, "react@>= 17.0.1", react@>=16.8, react@>=17.0.0, react@>15.6.0, "react@15.x || 16.x || 17.x || 18.x", react@18.2.0:
   version "18.2.0"
   dependencies:
     loose-envify "^1.1.0"
