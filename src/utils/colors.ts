@@ -12,5 +12,6 @@ const AppColors = {
   borderInput: '#060606',
   modalBackground: '#rgba(0, 0, 0, 0.5)',
   text: '#000',
+  placeholder: '#8e8e8e',
 };
 export default AppColors;
