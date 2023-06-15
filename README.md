@@ -8,8 +8,8 @@ If you don't want to build the app, that's fine. Let's check the app that I alre
 
 - Android app: https://i.diawi.com/14nfvm
 
-## Use-case 2: I don't want to install 2 applications above, it could be viruses
-Well, that makes sense. In that case, please check 2 videos that I record about the app after installation and use:
+## Use-case 2: I don't want to install the application above, it could be viruses
+Well, that makes sense. In that case, please check the video that I record about the app after installation and use:
 - Link Google Drive: https://drive.google.com/drive/folders/1TY4ZEc_pSaVy1c0l_MGZAywQeFSnFO-F?usp=sharing
 
 ## Use-case 3: I want to build the app myself and check the source code
